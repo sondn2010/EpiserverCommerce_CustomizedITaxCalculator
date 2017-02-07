@@ -1,48 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <ProductVersion>9.0.30729</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{413287F6-D606-4F42-BA25-4377A2C581F9}</ProjectGuid>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F99142BF-69EF-481B-9A1F-43CB1F71F7C8}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Mediachase.Commerce.Workflow</RootNamespace>
-    <AssemblyName>Mediachase.Commerce.Workflow</AssemblyName>
-    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <WarningLevel>4</WarningLevel>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EPiServer.Reference.Customization</RootNamespace>
+    <AssemblyName>EPiServer.Reference.Customization</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <TargetFrameworkProfile />
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <FileAlignment>512</FileAlignment>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-    <CodeAnalysisRuleSet>..\..\EPiServerCommerceRules.ruleset</CodeAnalysisRuleSet>
-    <NoWarn>1591</NoWarn>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <WarningsNotAsErrors>612,618</WarningsNotAsErrors>
-    <DocumentationFile>bin\Debug\Mediachase.Commerce.Workflow.XML</DocumentationFile>
-    <Prefer32Bit>false</Prefer32Bit>
-    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <DebugSymbols>true</DebugSymbols>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-    <CodeAnalysisRuleSet>..\..\EPiServerCommerceRules.ruleset</CodeAnalysisRuleSet>
-    <DocumentationFile>bin\Release\Mediachase.Commerce.Workflow.XML</DocumentationFile>
-    <NoWarn>1591</NoWarn>
-    <DebugType>pdbonly</DebugType>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <WarningsNotAsErrors>612,618</WarningsNotAsErrors>
-    <Prefer32Bit>false</Prefer32Bit>
-    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AjaxControlToolkit, Version=3.0.30930.28736, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
@@ -125,9 +110,6 @@
       <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="log4net">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
     <Reference Include="Lucene.Net, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
       <HintPath>..\packages\Lucene.Net.3.0.3\lib\NET40\Lucene.Net.dll</HintPath>
       <Private>True</Private>
@@ -158,6 +140,10 @@
     </Reference>
     <Reference Include="Mediachase.Commerce.Website, Version=10.2.3.0, Culture=neutral, PublicKeyToken=6e58b501b34abce3, processorArchitecture=MSIL">
       <HintPath>..\packages\EPiServer.Commerce.Core.10.2.3\lib\net45\Mediachase.Commerce.Website.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mediachase.Commerce.Workflow, Version=10.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPiServer.Commerce.Core.10.2.3\lib\net45\Mediachase.Commerce.Workflow.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Mediachase.DataProvider, Version=10.2.3.0, Culture=neutral, PublicKeyToken=41d2e7a615ba286c, processorArchitecture=MSIL">
@@ -196,8 +182,8 @@
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="nsoftware.IBizPay, Version=4.1.3575.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf, processorArchitecture=MSIL">
@@ -216,19 +202,12 @@
       <HintPath>..\packages\structuremap.web-signed.3.1.6.186\lib\net40\StructureMap.Web.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.configuration" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Design" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Core" />
     <Reference Include="System.Threading.Tasks.Dataflow, Version=4.5.24.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Tpl.Dataflow.4.5.24\lib\portable-net45+win8+wpa81\System.Threading.Tasks.Dataflow.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Transactions" />
     <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
       <Private>True</Private>
@@ -253,81 +232,26 @@
       <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Services" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Activities\CartActivities\AdjustInventoryActivity.cs" />
-    <Compile Include="Activities\CartActivities\CartActivityBase.cs" />
-    <Compile Include="Activities\CartActivities\GetFulfillmentWarehouseActivity.cs" />
-    <Compile Include="Activities\CartActivities\ProcessHandlingActivity.cs" />
-    <Compile Include="Activities\CartActivities\ProcessPaymentActivity.cs" />
-    <Compile Include="Activities\CartActivities\RecordPromotionUsageActivity.cs" />
-    <Compile Include="Activities\CartActivities\ShipmentSplitActivity.cs" />
-    <Compile Include="Activities\OrderFormHelper.cs" />
-    <Compile Include="Activities\OrderGroupActivities\CalculateDiscountsActivity.cs" />
-    <Compile Include="Activities\OrderGroupActivities\CalculateDiscountsVNextActivity.cs" />
-    <Compile Include="Activities\OrderGroupActivities\CalculateTaxActivity.cs" />
-    <Compile Include="Activities\OrderGroupActivities\CalculateTotalsActivity.cs" />
-    <Compile Include="Activities\OrderGroupActivities\UpdateTotalsVNextActivity.cs" />
-    <Compile Include="Activities\OrderGroupActivities\CapturePaymentActivity.cs" />
-    <Compile Include="Activities\OrderGroupActivities\CheckInventoryActivity.cs" />
-    <Compile Include="Activities\OrderGroupActivities\OrderGroupActivityBase.cs" />
-    <Compile Include="Activities\OrderGroupActivities\ProcessShipmentsActivity.cs" />
-    <Compile Include="Activities\OrderGroupActivities\RemoveDiscountsActivity.cs" />
-    <Compile Include="Activities\OrderGroupActivities\RemoveDiscountsVNextActivity.cs" />
-    <Compile Include="Activities\OrderGroupActivities\ValidateLineItemsActivity.cs" />
-    <Compile Include="Activities\PurchaseOrderActivities\AdjustInstoreInventoryActivity.cs" />
-    <Compile Include="Activities\PurchaseOrderActivities\CalculatePurchaseOrderStatusActivity.cs" />
-    <Compile Include="Activities\PurchaseOrderActivities\CheckInstoreInventoryActivity.cs" />
-    <Compile Include="Activities\PurchaseOrderActivities\HandoffActivityBase.cs" />
-    <Compile Include="Activities\PurchaseOrderActivities\PurchaseOrderBaseActivity.cs" />
-    <Compile Include="Activities\ReturnFormActivities\CalculateExchangeOrderStatusActivity.cs" />
-    <Compile Include="Activities\ReturnFormActivities\CalculateReturnFormStatusActivity.cs" />
-    <Compile Include="Activities\ReturnFormActivities\CalculateReturnFormTaxActivity.cs" />
-    <Compile Include="Activities\ReturnFormActivities\CalculateReturnFormTotalsActivity.cs" />
-    <Compile Include="Activities\ReturnFormActivities\CreateExchangePaymentActivity.cs" />
-    <Compile Include="Activities\ReturnFormActivities\ReturnFormBaseActivity.cs" />
-    <Compile Include="POSaveChangesVNextActivityFlow.cs" />
+    <Compile Include="CustomizedTaxCalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-    <Compile Include="CartCheckoutActivityFlow.cs" />
-    <Compile Include="CartPrepareActivityFlow.cs" />
-    <Compile Include="CartPrepareVNextActivityFlow.cs" />
-    <Compile Include="CartValidateActivityFlow.cs" />
-    <Compile Include="CartValidateVNextActivityFlow.cs" />
-    <Compile Include="CheckAndReserveInstorePickupActivityFlow.cs" />
-    <Compile Include="POCalculateTotalsActivityFlow.cs" />
-    <Compile Include="POCalculateTotalsVNextActivityFlow.cs" />
-    <Compile Include="POCompleteShipmentActivityFlow.cs" />
-    <Compile Include="PORecalculateActivityFlow.cs" />
-    <Compile Include="PORecalculateVNextActivityFlow.cs" />
-    <Compile Include="POSaveChangesActivityFlow.cs" />
-    <Compile Include="POSplitShipmentsActivityFlow.cs" />
-    <Compile Include="ReturnFormCompleteActivityFlow.cs" />
-    <Compile Include="ReturnFormRecalculateActivityFlow.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <AppDesigner Include="Properties\" />
   </ItemGroup>
-  <ItemGroup>
-    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\EPiServer.Reference.Customization\EPiServer.Reference.Customization.csproj">
-      <Project>{f99142bf-69ef-481b-9a1f-43cb1f71f7c8}</Project>
-      <Name>EPiServer.Reference.Customization</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup />
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
 </Project>
